@@ -17,10 +17,8 @@ set(TEST_ALL_SOURCES
 
 add_executable(${TEST_PROJECT_NAME} ${TEST_ALL_SOURCES})
 include_directories(${GTEST_INCLUDE_DIRS})
-target_link_libraries(${TEST_PROJECT_NAME} ${GTEST_LIBRARY})
-target_link_libraries(${TEST_PROJECT_NAME} gtest gmock)
+target_link_libraries(${TEST_PROJECT_NAME} ${GTEST_LIBRARIES} gmock gmock_main)
 target_link_libraries(${TEST_PROJECT_NAME} parallel_executor)
-target_link_libraries(${TEST_PROJECT_NAME} GTest::gtest_main)
 
 include(GoogleTest)
-gtest_discover_tests(test_proj)
+gtest_discover_tests(${TEST_PROJECT_NAME})
