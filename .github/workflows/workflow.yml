@@ -17,13 +17,7 @@ jobs:
       - name: Install Dependencies
         run: |
           sudo apt update
-          sudo apt install -y g++ cmake libgtest-dev libboost-all-dev
-          sudo apt-get install libgmock-dev
-          cd /usr/src/googletest/googlemock/
-          sudo mkdir build
-          sudo cmake ..
-          sudo make
-          sudo cp googlemock/*.a /usr/lib
+          sudo apt install -y g++ cmake libgtest-dev libboost-all-dev libgmock-dev
 
       - name: Build and Test
         run: |
